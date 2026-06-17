@@ -1,132 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSE - University of Rajshahi</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#003366;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 60px;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.logo{
+    color:gold;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    display:block;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:220px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.dropdown-content li a{
+    color:#003366;
+}
+
+.dropdown-content li a:hover{
+    background:#f4f4f4;
+    color:#003366;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/*  HERO  */
+
+.hero{
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    display:block;
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,.45);
+    padding:30px;
+    border-radius:12px;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    font-size:1.3rem;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:#003366;
+    margin-bottom:40px;
+    font-size:2rem;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:120px;
+    height:4px;
+    background:gold;
+    display:block;
+    margin:10px auto;
+}
+
+/* ================= QUICK ACCESS ================= */
+
+.quick-access{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.card{
+    width:240px;
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h2{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#003366;
+    margin-bottom:10px;
+}
+
+/*  NOTICE  */
+
+.notice-box{
+    background:white;
+    max-width:900px;
+    margin:auto;
+    padding:25px;
+    border-left:6px solid gold;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    line-height:2;
+}
+
+
+
+/*  PORTAL  */
+
+.portal{
+    max-width:450px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.portal input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+}
+
+.portal button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#003366;
+    color:white;
+    cursor:pointer;
+}
+
+.portal button:hover{
+    background:#002244;
+}
+
+
+
+/*  LOCATION */
+
+.location-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+/*  FOOTER  */
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer span{
+    color:gold;
+}
+
+/*  RESPONSIVE  */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero img{
+        height:450px;
+    }
+
+    .hero-text h1{
+        font-size:2rem;
+    }
+}
+
+</style>
 </head>
+
 <body>
-    <!-- ctrl+/ for comment -->
-    <h1 style="background-color:black; color:white; text-align:center;"> Hello World </h1>
-    <h1 style="background-color:blue; text-align:center;">This is my CV</h1>
-    <h1> <marquee direction="right"> Let's start 😊 </marquee></h1>
 
+<!--  NAVBAR  -->
 
-    <form>
-        <label><b>Date :</label> <input type="text"></b><br>
-    </form>
-    <br>
-    <img src="photo.jpg" width="200" height="250" alt="Minara Poly">
-    <h3>Minara Poly</h3>
-    <i>Dept of Computer Science and Engineering<br>University of Rajshahi</i>
-    <br>
-    <br>
+<nav>
 
-    <h3>Personal Information :</h3>
-    <form>
-        
-        <label><b>Name              :</label> <input type="text"></b><br>
-        <label><b>Father's Name     :</label> <input type="text"></b><br>
-        <label><b>Mother's Name     :</label> <input type="text"></b><br>
-        <label><b>Date of Birth     :</label> <input type="date"></b><br>
-        <label><b>Present Address   :</label> <input type="text"></b><br>
-        <label><b>Permanent Address :</label> <input type="text"></b><br>
-        <label><b>Marital Status    :</label> <input type="text"></b><br>
-        <label><b>Religion          :</label> <input type="text"></b><br>
-        <label><b>Nationality       :</label> <input type="text"></b><br>
-        
-        
-    </form>
-    <h3>Educational Qualification :</h3>
-    <table border="1" cellpadding="10">
-        <form>
-        <tr style="text-align:center;">
-            <th>Exam Name</th>
-            <th>Name of Institute</th>
-            <th>Group/Department</th>
-            <th>Passing Year</th>
-            <th>Board</th>
-            <th>Result</th>
-        </tr>
-        <tr style="text-align:center;">
-            <td>SSC</td>
-            <td>Mohandi Progati High School</td>
-            <td>Science</td>
-            <td>2021</td>
-            <td>Jashore</td>
-            <td>😊😊😊</td>
-        </tr>
-        <tr style="text-align:center;">
-            <td>HSC</td>
-            <td>Tala Government College</td>
-            <td>Science</td>
-            <td>2023</td>
-            <td>Jashore</td>
-            <td>😊😊😊</td>
-        </tr>
-        <tr style="text-align:center;">
-            <td>BSC</td>
-            <td>University of Rajshahi</td>
-            <td>CSE</td>
-            <td>2027</td>
-            <td>Rajshahi</td>
-            <td>😊😊😊</td>
-        </tr>
-        <tr style="text-align:center;">
-            <td>MSC</td>
-            <td>University of Rajshahi</td>
-            <td>CSE</td>
-            <td>2029</td>
-            <td>Rajshahi</td>
-            <td>😊😊😊</td>
-        </tr>
+    <div class="logo">CSE-RU</div>
 
-
-
-    </table>
-  
-    
-    <h3>Skills :</h3>
-    <!-- unorderer list -->
     <ul>
-        <li>C</li>
-        <li>C++</li>
-        <li>Java</li>
-        <li>Python</li>
-    </ul>
-    
 
-    <h3>Experience :</h3>
-    <ol>
-        <li>ICPC</li>
-        <dd>-->International Competetive Programming Contest</dd>
-        <li>NCPC</li>
-        <dd>-->National Competetive Programming Contest</dd>
-    </ol>
+        <li><a href="#">Home</a></li>
 
+        <li class="dropdown">
+            <a href="#">Academics ▼</a>
 
-    <h3>Additional :</h3>
-    <ol type="a">
-        <li><a href="https://MinaraPoly24-119.github.io/">MyGithubIO</a></li>
-        <li><a href="https://google.com">Google</a></li>
-    </ol>
+            <ul class="dropdown-content">
+                <li><a href="#">Undergraduate</a></li>
+                <li><a href="#">Postgraduate</a></li>
+                <li><a href="#">Research</a></li>
+            </ul>
+        </li>
 
+        <li class="dropdown">
+            <a href="#">People ▼</a>
 
+            <ul class="dropdown-content">
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#students">Students</a></li>
+                <li><a href="#staff">Staff</a></li>
+            </ul>
+        </li>
 
-    <h3>Reference :</h3>
-    <ul type="square">
-        <li>No One</li>
-        <li>🥺</li>
+        <li><a href="#rooms">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+
     </ul>
 
+</nav>
+
+<!--  HERO -->
+
+<section class="hero">
+
+    <img src="cse.jpeg" alt="CSE Department">
+
+    <div class="hero-text">
+        <h1>Department of Computer Science & Engineering</h1>
+        <p>University of Rajshahi</p>
+    </div>
+
+</section>
+
+<!--  QUICK ACCESS  -->
+
+<section>
+
+    <h2 class="section-title">Quick Access</h2>
+
+    <div class="quick-access">
+
+        <div class="card">
+            <h2>👨‍🏫</h2>
+            <h3>Teachers</h3>
+            <p>Faculty Directory</p>
+        </div>
+
+        <div class="card">
+            <h2>👨‍💼</h2>
+            <h3>Staff</h3>
+            <p>Administrative Staff</p>
+        </div>
+
+        <div class="card">
+            <h2>🎓</h2>
+            <h3>Students</h3>
+            <p>Student Resources</p>
+        </div>
+
+        <div class="card">
+            <h2>🏢</h2>
+            <h3>Rooms</h3>
+            <p>Labs & Classrooms</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!--  NOTICE -->
+
+<section>
+
+    <h2 class="section-title">Latest Notices</h2>
+
+    <div class="notice-box">
+        📌 Undergraduate admission information available.<br>
+        📌 Updated class routine published.<br>
+        📌 Research seminar scheduled next week.<br>
+        📌 Departmental meeting notice.
+    </div>
+
+</section>
 
 
-    <h3>Signature :</h3>
-    <p><i><u>Minara Poly</u></i></p>
 
 
+<!-- STUDENT PORTAL  -->
+
+<section id="students">
+
+    <h2 class="section-title">Student Portal</h2>
+
+    <div class="portal">
+
+        <input type="text" placeholder="Student ID">
+
+        <input type="password" placeholder="Password">
+
+        <button>Login</button>
+
+    </div>
+
+</section>
 
 
+<!--  CONTACT  -->
+
+<section id="contact">
+
+    <h2 class="section-title">Location & Contact</h2>
+
+    <div class="location-box">
+
+        <h3>Department of Computer Science & Engineering</h3>
+
+        <br>
+
+        <p>
+            University of Rajshahi<br>
+            Rajshahi, Bangladesh
+        </p>
+
+        <br>
+
+        <p>
+            Email: cse@ru.ac.bd<br>
+            Phone: +880-XXX-XXXXXX
+        </p>
+
+    </div>
+
+</section>
+
+<!--  FOOTER  -->
+
+<footer>
+
+    <p>
+        © 2026 <span>Department of Computer Science & Engineering</span><br>
+        University of Rajshahi
+    </p>
+
+</footer>
 
 </body>
 </html>
