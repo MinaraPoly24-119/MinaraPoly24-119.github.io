@@ -1,444 +1,235 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSE - University of Rajshahi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f4f7fb;
-    color:#333;
-}
-
-/*  NAVBAR  */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#003366;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 60px;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-
-.logo{
-    color:gold;
-    font-size:28px;
-    font-weight:bold;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-}
-
-nav ul li{
-    position:relative;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    padding:15px 20px;
-    display:block;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:gold;
-}
-
-/*  DROPDOWN  */
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    min-width:220px;
-    background:white;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-
-.dropdown-content li a{
-    color:#003366;
-}
-
-.dropdown-content li a:hover{
-    background:#f4f4f4;
-    color:#003366;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
-/*  HERO  */
-
-.hero{
-    position:relative;
-}
-
-.hero img{
-    width:100%;
-    height:650px;
-    object-fit:cover;
-    display:block;
-}
-
-.hero-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    color:white;
-    background:rgba(0,0,0,.45);
-    padding:30px;
-    border-radius:12px;
-}
-
-.hero-text h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero-text p{
-    font-size:1.3rem;
-}
-
-/*  SECTION  */
-
-section{
-    padding:80px 10%;
-}
-
-.section-title{
-    text-align:center;
-    color:#003366;
-    margin-bottom:40px;
-    font-size:2rem;
-    position:relative;
-}
-
-.section-title::after{
-    content:"";
-    width:120px;
-    height:4px;
-    background:gold;
-    display:block;
-    margin:10px auto;
-}
-
-/*  QUICK ACCESS  */
-
-.quick-access{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-}
-
-.card{
-    width:240px;
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h2{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.card h3{
-    color:#003366;
-    margin-bottom:10px;
-}
-
-/*  NOTICE  */
-
-.notice-box{
-    background:white;
-    max-width:900px;
-    margin:auto;
-    padding:25px;
-    border-left:6px solid gold;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-    line-height:2;
-}
-
-
-
-/*  PORTAL  */
-
-.portal{
-    max-width:450px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
-}
-
-.portal input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-}
-
-.portal button{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:#003366;
-    color:white;
-    cursor:pointer;
-}
-
-.portal button:hover{
-    background:#002244;
-}
-
-
-
-/*  LOCATION */
-
-.location-box{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.1);
-}
-
-/*  FOOTER  */
-
-footer{
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-
-footer span{
-    color:gold;
-}
-
-/*  RESPONSIVE  */
-
-@media(max-width:768px){
-
-    nav{
-        flex-direction:column;
-        padding:15px;
-    }
-
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero img{
-        height:450px;
-    }
-
-    .hero-text h1{
-        font-size:2rem;
-    }
-}
-
-</style>
+    <title>Minara Poly</title>
 </head>
 
-<body>
+<body class="container" style="background-color: #f4f7fb">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+     style="background:#003366;">
 
-<!--  NAVBAR  -->
+    <div class="container">
 
-<nav>
+        <a class="navbar-brand text-warning fw-bold" href="#">
+            CSE-RU
+        </a>
 
-    <div class="logo">CSE-RU</div>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <ul>
+        <div class="collapse navbar-collapse" id="menu">
 
-        <li><a href="#">Home</a></li>
+            <ul class="navbar-nav ms-auto">
 
-        <li class="dropdown">
-            <a href="#">Academics ▼</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
 
-            <ul class="dropdown-content">
-                <li><a href="#">Undergraduate</a></li>
-                <li><a href="#">Postgraduate</a></li>
-                <li><a href="#">Research</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       data-bs-toggle="dropdown">
+                        Academics
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Undergraduate</a></li>
+                        <li><a class="dropdown-item" href="#">Postgraduate</a></li>
+                        <li><a class="dropdown-item" href="#">Research</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
             </ul>
-        </li>
 
-        <li class="dropdown">
-            <a href="#">People ▼</a>
+        </div>
 
-            <ul class="dropdown-content">
-                <li><a href="#teachers">Teachers</a></li>
-                <li><a href="#students">Students</a></li>
-                <li><a href="#staff">Staff</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#rooms">Location</a></li>
-        <li><a href="#contact">Contact</a></li>
-
-    </ul>
+    </div>
 
 </nav>
 
-<!--  HERO -->
+<section class="position-relative">
 
-<section class="hero">
+    <img src="cse.jpeg"
+         class="w-100"
+         style="height:650px ; object-fit:cover;">
 
-    <img src="cse.jpeg" alt="CSE Department">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white bg-dark bg-opacity-50 p-4 rounded">
 
-    <div class="hero-text">
-        <h1>Department of Computer Science & Engineering</h1>
-        <p>University of Rajshahi</p>
-    </div>
+        <h1 class="display-4 fw-bold">
+            Department of Computer Science & Engineering
+        </h1>
 
-</section>
-
-<!--  QUICK ACCESS  -->
-
-<section>
-
-    <h2 class="section-title">Quick Access</h2>
-
-    <div class="quick-access">
-
-        <div class="card">
-            <h2>👨‍🏫</h2>
-            <h3>Teachers</h3>
-            <p>Faculty Directory</p>
-        </div>
-
-        <div class="card">
-            <h2>👨‍💼</h2>
-            <h3>Staff</h3>
-            <p>Administrative Staff</p>
-        </div>
-
-        <div class="card">
-            <h2>🎓</h2>
-            <h3>Students</h3>
-            <p>Student Resources</p>
-        </div>
-
-        <div class="card">
-            <h2>🏢</h2>
-            <h3>Rooms</h3>
-            <p>Labs & Classrooms</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!--  NOTICE -->
-
-<section>
-
-    <h2 class="section-title">Latest Notices</h2>
-
-    <div class="notice-box">
-        📌 Undergraduate admission information available.<br>
-        📌 Updated class routine published.<br>
-        📌 Research seminar scheduled next week.<br>
-        📌 Departmental meeting notice.
-    </div>
-
-</section>
-
-
-
-
-<!-- STUDENT PORTAL  -->
-
-<section id="students">
-
-    <h2 class="section-title">Student Portal</h2>
-
-    <div class="portal">
-
-        <input type="text" placeholder="Student ID">
-
-        <input type="password" placeholder="Password">
-
-        <button>Login</button>
-
-    </div>
-
-</section>
-
-
-<!--  CONTACT  -->
-
-<section id="contact">
-
-    <h2 class="section-title">Location & Contact</h2>
-
-    <div class="location-box">
-
-        <h3>Department of Computer Science & Engineering</h3>
-
-        <br>
-
-        <p>
-            University of Rajshahi<br>
-            Rajshahi, Bangladesh
-        </p>
-
-        <br>
-
-        <p>
-            Email: cse@ru.ac.bd<br>
-            Phone: +880-XXX-XXXXXX
+        <p class="lead">
+            University of Rajshahi
         </p>
 
     </div>
 
 </section>
 
-<!--  FOOTER  -->
+<section class="container py-5">
 
-<footer>
+    <h2 class="text-center mb-5 text-primary">
+        Quick Access
+    </h2>
 
-    <p>
-        © 2026 <span>Department of Computer Science & Engineering</span><br>
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card text-center shadow h-100">
+                <div class="card-body">
+                    <h1>👨‍🏫</h1>
+                    <h4>Teachers</h4>
+                    <p>Faculty Directory</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow h-100">
+                <div class="card-body">
+                    <h1>👨‍💼</h1>
+                    <h4>Staff</h4>
+                    <p>Administrative Staff</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow h-100">
+                <div class="card-body">
+                    <h1>🎓</h1>
+                    <h4>Students</h4>
+                    <p>Student Resources</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow h-100">
+                <div class="card-body">
+                    <h1>🏢</h1>
+                    <h4>Rooms</h4>
+                    <p>Labs & Classrooms</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <h2 class="text-center mb-4 text-primary">
+        Latest Notices
+    </h2>
+
+    <div class="card border-warning border-4 shadow">
+
+        <div class="card-body">
+
+            <p>📌 Undergraduate admission information available.</p>
+            <p>📌 Updated class routine published.</p>
+            <p>📌 Research seminar scheduled next week.</p>
+            <p>📌 Departmental meeting notice.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container py-5">
+
+    <h2 class="text-center mb-4 text-primary">
+        Student Portal
+    </h2>
+
+    <div class="card shadow mx-auto"
+         style="max-width:500px;">
+
+        <div class="card-body">
+
+            <input type="text"
+                   class="form-control mb-3"
+                   placeholder="Student ID">
+
+            <input type="password"
+                   class="form-control mb-3"
+                   placeholder="Password">
+
+            <button class="btn w-100 text-white"
+                    style="background:#003366;">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container py-5" id="contact">
+
+    <h2 class="text-center mb-4 text-primary">
+        Location & Contact
+    </h2>
+
+    <div class="card shadow">
+
+        <div class="card-body text-center">
+
+            <h4>
+                Department of Computer Science & Engineering
+            </h4>
+
+            <p>
+                University of Rajshahi<br>
+                Rajshahi, Bangladesh
+            </p>
+
+            <p>
+                Email: cse@ru.ac.bd<br>
+                Phone: +880-XXX-XXXXXX
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="text-center text-white py-4"
+        style="background:#003366;">
+
+    <p class="mb-0">
+        © 2026
+        <span class="text-warning">
+            Department of Computer Science & Engineering
+        </span>
+        <br>
         University of Rajshahi
     </p>
 
 </footer>
+
+
 
 </body>
 </html>
