@@ -1,72 +1,45 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minara Poly</title>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body class="container-fluid" style="background-color: #f4f7fb">
 
-<body class="container-fluid" style="background-color: #f4f7fb">
     
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-     style="background:#003366;">
+<nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1" href="#">RU-CSE</a>
 
-    <div class="container">
-
-        <a class="navbar-brand text-warning fw-bold" href="#">
-            CSE-RU
+    <div>
+        <div class="d-flex flex-row">
+      <a href="#Home" class="btn btn-primary text-light me-2">Home</a>
+      
+          <div class="dropdown me-2">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Academic
         </a>
 
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="menu">
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                       href="#"
-                       data-bs-toggle="dropdown">
-                        Academics
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Undergraduate</a></li>
-                        <li><a class="dropdown-item" href="#">Postgraduate</a></li>
-                        <li><a class="dropdown-item" href="#">Research</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </div>
-
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Undergraduate</a></li>
+            <li><a class="dropdown-item" href="#">Postgraduate</a></li>
+            <li><a class="dropdown-item" href="#">Research</a></li>
+        </ul>
     </div>
 
+      <a href="#Contact" class="btn btn-primary text-light me-2">Contact</a>
+      <a href="https://maps.app.goo.gl/3DdRh2BQTbgzCjVXA?g_st=aw" class="btn btn-primary text-light me-2">Location</a>
+    </div>
+    </div>
+    </div>
 </nav>
 
 <section class="position-relative">
 
-    <img src="cse.jpeg"
-         class="w-100"
-         style="height:650px ; object-fit:cover;">
+    <img src="cse2.jpeg" class="w-100" style="height:650px ; object-fit:cover;">
 
     <div class="position-absolute top-50 start-50 translate-middle text-center text-white bg-dark bg-opacity-50 p-4 rounded">
 
@@ -82,113 +55,67 @@
 
 </section>
 
-<section class="container py-5">
-
-    <h2 class="text-center mb-5 text-primary">
-        Quick Access
-    </h2>
-
-    <div class="row g-4">
-
-        <div class="col-md-3">
-            <div class="card text-center shadow h-100">
-                <div class="card-body">
-                    <h1>👨‍🏫</h1>
-                    <h4>Teachers</h4>
-                    <p>Faculty Directory</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card text-center shadow h-100">
-                <div class="card-body">
-                    <h1>👨‍💼</h1>
-                    <h4>Staff</h4>
-                    <p>Administrative Staff</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card text-center shadow h-100">
-                <div class="card-body">
-                    <h1>🎓</h1>
-                    <h4>Students</h4>
-                    <p>Student Resources</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card text-center shadow h-100">
-                <div class="card-body">
-                    <h1>🏢</h1>
-                    <h4>Rooms</h4>
-                    <p>Labs & Classrooms</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
 
 <section class="container py-5">
+<div class="row g-4">
 
-    <h2 class="text-center mb-4 text-primary">
-        Latest Notices
-    </h2>
 
-    <div class="card border-warning border-4 shadow">
+<div class="col-md-3">
+<a href="teacher.html">
+<div class="card text-center shadow h-100">
+  
+  <div class="card-body">
+    <h5 class="card-title">Teacher</h5>
+    <p class="card-text"><h1>👨‍🏫</h1></p>
+  </div>
+</div>
+</a>
+</div>
 
-        <div class="card-body">
 
-            <p>📌 Undergraduate admission information available.</p>
-            <p>📌 Updated class routine published.</p>
-            <p>📌 Research seminar scheduled next week.</p>
-            <p>📌 Departmental meeting notice.</p>
+ <div class="col-md-3">
+    <a href="student.html">
+<div class="card text-center shadow h-100">
+ 
+  <div class="card-body">
+    <h5 class="card-title">Student</h5>
+    <p class="card-text"><h1>🎓</h1></p>
+  </div>
+</div>
+</a>
+</div>
 
-        </div>
+ <div class="col-md-3">
+    <a href="achivement.html">
+<div class="card text-center shadow h-100">
+  
+  <div class="card-body">
+    <h5 class="card-title">Achivement</h5>
+    <p class="card-text"><h1>🏆</h1></p>
+  </div>
+</div>
+</a>
+</div>
 
-    </div>
+ <div class="col-md-3">
+    <a href="room.html">
+<div class="card text-center shadow h-100">
+  
+  <div class="card-body">
+    <h5 class="card-title">Room</h5>
+    <p class="card-text"><h1>🏢</h1></p>
+  </div>
+</div>
+</a>
+</div>
 
-</section>
-
-<section class="container py-5">
-
-    <h2 class="text-center mb-4 text-primary">
-        Student Portal
-    </h2>
-
-    <div class="card shadow mx-auto"
-         style="max-width:500px;">
-
-        <div class="card-body">
-
-            <input type="text"
-                   class="form-control mb-3"
-                   placeholder="Student ID">
-
-            <input type="password"
-                   class="form-control mb-3"
-                   placeholder="Password">
-
-            <button class="btn w-100 text-white"
-                    style="background:#003366;">
-                Login
-            </button>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 <section class="container py-5" id="contact">
 
     <h2 class="text-center mb-4 text-primary">
-        Location & Contact
+        Contact
     </h2>
 
     <div class="card shadow">
@@ -215,6 +142,7 @@
 
 </section>
 
+
 <footer class="text-center text-white py-4"
         style="background:#003366;">
 
@@ -231,5 +159,15 @@
 
 
 
-</body>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </html>
